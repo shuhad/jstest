@@ -3,7 +3,6 @@
 // price, the price of the product
 var calculatePrice = function (userType, productType, price, publishedDate) {
 	const publishedTodayRebate = 10;
-	const normalUserRebate = 0;
 	const companyUserRebate = 5;
 	const productTypeNew = 25;
 	const productTypeOld = 35;
@@ -16,7 +15,7 @@ var calculatePrice = function (userType, productType, price, publishedDate) {
 				if (publishedDate.toDateString() == new Date().toDateString()) endDateDiscount = publishedTodayRebate;
 				return price + productTypeNew - endDateDiscount;
 			} else if (productType == 1) { // old product
-				return price + productTypeOld - normalUserRebate;
+				return price + productTypeOld;
 			}
 			break;
 		case 1: // company
